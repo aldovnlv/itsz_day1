@@ -50,7 +50,20 @@ print(linear_model.summary())
 ## Se entrena el modelo
 ##                                                                   ciclos
 ##                                                                       ^
+
+## impresion de los pesos y bias del modelo
+w,b = linear_model.weights
+print('===== before')
+print(w)
+print(b)
+
 linear_model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=20)
+
+print('===== after')
+print(w)
+print(b)
+
+
 
 #print(linear_model.predict([ [0.0], [2.0], [3.1], [4.2], [5.2] ] ).tolist() )   
 
