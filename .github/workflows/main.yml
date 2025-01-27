@@ -1,0 +1,19 @@
+name: DockerImage
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  prediction:
+    runs-on: ubuntu-latest
+    container: adsoft/ai-ops:latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: run python program 
+      run: python linear.py
