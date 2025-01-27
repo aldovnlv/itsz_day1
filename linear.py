@@ -76,7 +76,7 @@ print(b.numpy())
 ## prueba del modelo con algunos datos de prueba
 ##                                                       
 ##                                                       ^
-print(linear_model.predict(tf.constant([ [100.0], [1.0], [200.0], [300.0], [400.0] ] ) )) 
+print(linear_model.predict(tf.constant([ [10.0], [1.0], [200.0], [300.0], [400.0] ] ) )) 
 
 export_path = 'linear-model/1/'
 tf.saved_model.save(linear_model, os.path.join('./',export_path))
