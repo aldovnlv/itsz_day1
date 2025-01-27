@@ -17,3 +17,6 @@ jobs:
     
     - name: run python program 
       run: python linear.py
+    
+    - name: list files
+      run: ls -la  
