@@ -61,6 +61,8 @@ print(b.numpy())
 
 linear_model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=20)
 
+
+## mostrando los pesos y bias despues de la ultima pasada de entrenamiento
 print('===== after')
 print(w)
 print(w.numpy())
@@ -78,5 +80,6 @@ print(b.numpy())
 ##                                                       ^
 print(linear_model.predict(tf.constant([ [10.0], [1.0], [200.0], [300.0], [400.0] ] ) )) 
 
+## exportacion del modelo con las matrices con pesos.
 export_path = 'linear-model/1/'
 tf.saved_model.save(linear_model, os.path.join('./',export_path))
