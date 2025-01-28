@@ -19,4 +19,4 @@ jobs:
       run: python linear.py
     
     - name: list files
-      run: ls -la  
+      run: ls -la linear-model/1/
