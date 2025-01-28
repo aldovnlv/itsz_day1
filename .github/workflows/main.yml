@@ -18,5 +18,5 @@ jobs:
     - name: run python program 
       run: python linear.py
     
-    - name: list files
+    - name: list model
       run: ls -la linear-model/1/
