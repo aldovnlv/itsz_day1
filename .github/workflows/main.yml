@@ -33,9 +33,15 @@ jobs:
  
     - name: copy model to the Docker image
       run: docker cp ${{secrets.MODEL_NAME}} serving_base:/models/${{secrets.MODEL_NAME}}
+
+    - name: show files in container
+      run: docker exec serving_base ls -la models/${{secrets.MODEL_NAME}}
       
     - name: Build the custom Docker image
       run: docker commit --change "ENV MODEL_NAME ${{secrets.MODEL_NAME}}" serving_base ${{secrets.DOCKER_USER}}/tensorflow-${{secrets.MODEL_NAME}}:${{ github.sha }}
-  
+    
+    - name: list docker images
+      run: docker images
+      
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/tensorflow-${{secrets.MODEL_NAME}}:${{ github.sha }}
